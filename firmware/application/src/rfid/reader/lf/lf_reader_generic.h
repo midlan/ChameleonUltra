@@ -12,12 +12,12 @@
  * A steady carrier reads ~0x80-0x82; a gap reads noticeably lower.
  *
  * @param data        Output buffer for raw samples
- * @param maxlen      Max bytes to capture (max 4000 for USB frame limit)
+ * @param maxlen      Max bytes to capture (max 8192 for USB frame limit)
  * @param timeout_ms  Stop after this many ms even if buffer not full
  * @param outlen      Actual number of bytes written
  * @return            true on success
  */
 /** Maximum bytes a single raw capture can return (USB frame limit). */
-#define LF_SNIFF_MAX_SAMPLES  4000
+#define LF_SNIFF_MAX_SAMPLES  8192
 
 bool raw_read_to_buffer(uint8_t *data, size_t maxlen, uint32_t timeout_ms, size_t *outlen);
